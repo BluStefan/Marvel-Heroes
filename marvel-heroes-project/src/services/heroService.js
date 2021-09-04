@@ -8,6 +8,7 @@ export const HeroService = () => {
     .then(heroes => {
         return heroes.data.results.map(hero => {
             return {
+                id:hero.id,
                 image:`${hero.thumbnail.path}.${hero.thumbnail.extension}`,
                 name: hero.name,
                 description: hero.description

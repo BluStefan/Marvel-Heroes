@@ -1,14 +1,15 @@
 import React from "react";
+
 import './MyTeam.css';
 
-export const MyTeam = () => {
+export const MyTeam = ({hero, removeMember}) => {
     
     return (
     <div className="myTeam">
-        <h4>My Team</h4>
+      
     <div className="someHero">
-        <img className="card-img-left" src="" alt="slika " />
-        <h5 className="card-title">Some Hero</h5>
+        <img className="card-img" src={hero.image} alt="slika" onClick={() => removeMember(hero)} />
+        <h5 className="card-title">{hero.name}</h5>
     </div>
 </div>
     )
