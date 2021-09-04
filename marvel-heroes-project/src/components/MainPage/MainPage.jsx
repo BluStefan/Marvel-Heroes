@@ -3,6 +3,7 @@ import { Hero } from '../Hero/Hero';
 import './MainPage.css';
 import { HeroService } from "../../services/heroService";
 import { Search } from "../SearchBar/SearchBar";
+import { MyTeam } from "../MyTeam/MyTeam";
 
 export const MainPage = () => {
     const [heroes, setHeroes] = useState([]);
@@ -39,6 +40,7 @@ export const MainPage = () => {
 
 
         }
+        <MyTeam/>
         </div>
 
     )
