@@ -12,20 +12,22 @@ export const MainPage = () => {
 
     function addHeroToMyteam(hero) {
         let myHeroes = [...selectedHeroes];
+        let heroExist = myHeroes.filter(item=>item.id === hero.id);
+        if(heroExist && heroExist.length>0) {
+            alert("Hero already selected");
+        } else {
         myHeroes.push(hero);
         setSelectedHeroes(myHeroes);
-
-        let skippedHero = heroes.filter(item => item.id !=hero.id);
-        setHeroes(skippedHero);
+        }
+        
     }
     function removeHeroToMyteam(hero) {
-        let removedHeroes = [...heroes]
-        removedHeroes.push(hero);
-        setHeroes(removedHeroes);
+     
 
-        let deletedHero = selectedHeroes.filter(item => item.id !=hero.id);
-        setSelectedHeroes(deletedHero);
+         let deletedHero = selectedHeroes.filter(item => item.id !==hero.id);
+         setSelectedHeroes(deletedHero);
     }
+
 
     useEffect(() => {
         HeroService().then((heroes) => {
